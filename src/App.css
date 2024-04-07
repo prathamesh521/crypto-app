@@ -101,3 +101,8 @@ p {
 .user-icon:hover > path{
   color: #8fce00;
 }
+
+.row > .col-12 {
+  padding-top: calc(var(--bs-gutter-x)* .5);
+  padding-bottom: calc(var(--bs-gutter-x)* .5);
+}
