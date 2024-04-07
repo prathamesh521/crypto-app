@@ -12,8 +12,8 @@ const CryptoDetails = ({
 }) => {
   // console.log('Name: '. image);
   return (
-    <div className="coin-container">
-      <div className="coin-row">
+    <div className="col-12 col-md-6 col-lg-4 ">
+      <div className="card h-100">
         <div className="coin">
           <img src={image} alt="crypto1" />
           <h1>{name}</h1>
