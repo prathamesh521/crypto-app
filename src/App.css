@@ -1,42 +1,103 @@
-@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
-*{
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Bree Serif', serif;
+  font-family: "Lato", serif;
   /* background-image: linear-gradient(to top, #f43b47 0%, #453a94 100%); */
-  color: #fff;
-  background-color: black;
-
+  /* color: #fff; */
+  /* background-color: black; */
 }
-.coin-app{
+/* .coin-app{
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 64px;
   color: #fff;
-}
-.coin-search{
-  margin-bottom: 64px;
+} */
+.coin-search {
+  /* margin-bottom: 64px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.coin-text{
+.coin-text {
   margin-bottom: 32px;
   text-align: center;
 }
-.coin-input{
+.coin-input {
   padding-left: 16px;
   width: 300px;
   height: 50px;
   border-radius: 4px;
   border: none;
-  background-image: linear-gradient(to right, #3ab5b0 0%, #3d99be 31%, #56317a 100%);
+  background-image: linear-gradient(
+    to right,
+    #3ab5b0 0%,
+    #3d99be 31%,
+    #56317a 100%
+  );
   /* background-image: linear-gradient(to top, #fcc5e4 0%, #fda34b 15%, #ff7882 35%, #c8699e 52%, #7046aa 71%, #0c1db8 87%, #020f75 100%); */
-color: #e2e2e2;
-}
-.coin-input::placeholder{
   color: #e2e2e2;
+}
+.coin-input::placeholder {
+  color: #e2e2e2;
+}
+
+svg > path,
+h1,
+p {
+  color: #000 !important;
+}
+
+
+.nav-list-icon:first-child {
+  margin-left: 5px;
+}
+
+
+.nav-list-icon{
+  margin-right: 10px;
+}
+
+.nav-list-icon:last-child {
+  margin-right: unset;
+}
+
+
+/* .coin-search {
+  display: none;
+} */
+
+@media (max-width: 768px) {
+  .collapse:not(.show) {
+    display: flex !important;
+  }
+  .navbar > .container-fluid {
+    flex-wrap: nowrap !important;
+  }
+}
+
+/* search form styles starts */
+.search-form{
+  display: none;
+}
+.search-form.active{
+  display: block;
+}
+
+.search-field:focus{
+  box-shadow: none !important;
+  border-color: rgb(222, 226, 230)
+  !important;
+}
+
+/* search form styles ends */
+
+.favorite-icon:hover > path{
+  color: #e31b23;
+}
+.user-icon:hover > path{
+  color: #8fce00;
 }

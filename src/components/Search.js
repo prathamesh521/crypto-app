@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const Search = ({ getCoins }) => {
+const Search = ({ getCoins, className }) => {
   const [search, setSearch] = useState('');
-
+  
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    const searchQuery = e.target.value;
+    const searchQuery = search.trim();
 
-    console.log(searchQuery);
+    // Update the browser URL with the search query
+    window.history.pushState(null, '', `?query=${encodeURIComponent(searchQuery)}`);
+
     axios
-      .get(`https://api.coingecko.com/api/v3/search?query=bitcoin`)
+      .get(`https://api.coingecko.com/api/v3/search?query=${searchQuery}`)
       .then((response) => {
         console.log(response.data.coins);
         getCoins(response.data.coins);
@@ -19,25 +21,20 @@ const Search = ({ getCoins }) => {
         console.error("Error fetching data:", error);
       });
 
-      setSearch('');
-
-    }
+    setSearch('');
+  }
 
   const handleOnChange = (e) => {
     setSearch(e.target.value);
-
-    console.log(e.target.value)
   };
-
-
 
   return (
     <div className="coin-search">
       {/* <h1 className="coin-text">Search your desired coin</h1> */}
-      <form onSubmit={handleOnSubmit}>
+      <form onSubmit={handleOnSubmit} className={`search-form ${className}`}>
         <input
           type="text"
-          className="coin-input"
+          className="form-control search-field"
           placeholder="Provide the coin name"
           value={search}
           onChange={handleOnChange}

@@ -4,7 +4,10 @@ import "./App.css";
 import axios from "axios";
 
 import CryptoDetails from "./components/CryptoDetails";
-import Search from "./components/Search";
+
+
+import Button from 'react-bootstrap/Button';
+import Navbar from "./components/Navbar";
 
 function App() {
   const [coins, setCoins] = useState([]);
@@ -28,7 +31,8 @@ function App() {
   // console.log(filteredCoins);
   return (
     <div className="coin-app">
-      <Search getCoins={(a) => setCoins(a)}/>
+      <Navbar setCoins={setCoins}/>
+      
       {coins.map((coin) => {
         return (
           <CryptoDetails
