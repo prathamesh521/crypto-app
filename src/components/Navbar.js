@@ -14,7 +14,7 @@ const Navbar = ({ setCoins }) => {
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid container-md">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="/">
             CoinsCheck
           </a>
           
